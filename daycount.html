@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <body>
+  <script>
+	year=Number(window.prompt('请输入年：'));
+	mounth=Number(window.prompt('请输入月：'));
+	day=Number(window.prompt('请输入日：'));
+	daycount=0;
+	var isRun=year%4==0&&year%100!=0||year%400==0;
+	if (isRun)
+	{
+		yue=mounth;
+		while (mounth)
+		{
+			if (mounth!=yue)
+			{
+				if (mounth==1 || mounth==3 || mounth==5 || mounth==7 || mounth==8 || mounth==10 || mounth==12)
+				{
+					daycount+=31;
+				}
+				else if (mounth==2)
+				{
+					daycount+=29;
+				}
+				else
+				{
+					daycount+=30;
+				}
+				mounth--;
+				continue;
+			}
+			daycount+=day;
+			mounth--;
+		}
+		console.log(yue+'月'+day+'日是'+year+'年的'+daycount+'天');
+	}
+	else
+	{
+		yue=mounth;
+		while (mounth)
+		{
+			if (mounth!=yue)
+			{
+				if (mounth==1 || mounth==3 || mounth==5 || mounth==7 || mounth==8 || mounth==10 || mounth==12)
+				{
+					daycount+=31;
+				}
+				else if (mounth==2)
+				{
+					daycount+=28;
+				}
+				else
+				{
+					daycount+=30;
+				}
+				mounth--;
+				continue;
+			}
+			daycount+=day;
+			mounth--;
+		}
+		console.log(yue+'月'+day+'日是'+year+'年的第'+daycount+'天');
+	}
+  </script>
+ </body>
+</html>
